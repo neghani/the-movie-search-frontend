@@ -16,3 +16,24 @@ export default async function searchMovie(movieName, page = 1) {
     throw Error(error.message);
   }
 }
+
+export async function getMovieDetails(movieId) {
+  try {
+    if (!movieId) {
+      throw new Error("Movie id is invalid");
+    }
+    const url = `http://localhost:3000/movie-details/${movieId}`;
+    const response = await fetch(url);
+    const res = await response.json();
+    if (res.success === false) {
+      throw new Error(res.error);
+    }
+    console.log(res);
+    if (!res) {
+      throw new Error("Nothing found with that query");
+    }
+    return res;
+  } catch (error) {
+    throw Error(error.message);
+  }
+}

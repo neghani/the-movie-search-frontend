@@ -48,6 +48,8 @@ function App() {
   function generatePagination(N) {
     return Array.from({ length: N }, (_, index) => index + 1);
   }
+
+  
   return (
     <div>
       <Nav></Nav>
