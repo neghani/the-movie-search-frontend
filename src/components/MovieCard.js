@@ -5,8 +5,8 @@ export default function MovieCard({ movie }) {
 
   return (
     <>
-      <NavLink to={`/movie/${movie.id}`}>
-        <div className="col-6 col-lg-3 col-md-auto col-sm-12">
+      <div className="col-6 col-lg-3 col-md-auto col-sm-12">
+        <NavLink to={`/movie/${movie.id}`}>
           <div className="movieCard">
             <img
               src={`${publicImageURL}${movie.backdrop_path}`}
@@ -27,8 +27,8 @@ export default function MovieCard({ movie }) {
               </p>
             </div>
           </div>
-        </div>
-      </NavLink>
+        </NavLink>
+      </div>
     </>
   );
 }

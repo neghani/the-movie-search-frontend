@@ -6,12 +6,14 @@ import reportWebVitals from "./reportWebVitals";
 import { Routes, Route } from "react-router-dom";
 import MovieDetailCard from "./components/MovieDetailCard";
 import { BrowserRouter } from "react-router-dom";
+import Home from "./components/Home";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<Home/>}> </Route>
+      <Route path="/search/:query" element={<App />} />
       <Route path="/movie/:id" element={<MovieDetailCard />} />
     </Routes>
   </BrowserRouter>
